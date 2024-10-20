@@ -1,19 +1,42 @@
-g1 = graph(xtitle="t [s]",ytitle="V [volts]"
-width=400, height=200)
-fc = gcurve(color=color,blue)
-fa = gcurve(color=color,red)
+```
+import numpy as np
 
-R = 100
-C = 0.001
-t = 0
-dt = 0.01
-vb = 0
-Q = 3*C
+import matplotlib.pyplot as plt
 
- while t <1.5:
-    dQ = (vb - Q/C)*dt/R
-    Q = Q + dQ
-    Vc = Vb*(1 - exp(-t/(R*C)))
-    fc.plot(t,Vc)
-    #fa.plot(t,va)
-    
+# Constants
+
+R = 1000 #Resistance (ohms)
+
+C = 0.001 #Capacitance (farads)
+
+V0 = 10 #Initial voltage (volts)
+
+# Time points
+t = np.linspace(0, 10, 1000)
+
+# Charging model
+V_charge = V0 * (1 - np.exp(-t/(R*C)))
+
+# Discharging model
+V_discharge = V0 * np.exp(-t/(R*C))
+
+# Plot results 
+plt.figure(figsize=(10, 5))
+
+plt.subplot(1, 2, 1) 
+plt.plot(t, V_charge)
+plt.title('Capacitor Charging') 
+plt.xlabel('Time (s)') 
+plt.ylabel('Voltage (V)')
+plt.grid(True)
+
+plt.subplot(1, 2, 2)
+plt.plot(t, V_discharge)
+plt.title('Capacitor Discharging') 
+plt.xlabel('Time (s)')
+plt.ylabel('Voltage (V)')
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+```
