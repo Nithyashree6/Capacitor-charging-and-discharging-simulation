@@ -5,15 +5,15 @@ import sympy as sp
 # Constants
 R = 1.0  # Resistance (Ohms)
 V = 1.0  # Voltage (volts)
-Q0 = 1.0  # Initial charge (Coulombs)
+V0 = 1.0  # Initial voltage (volts)
 tau = R * V  # Time constant
 
 # Time values
 t = np.linspace(0, 5 * tau, 500)
 
 # Charge functions for charging and discharging
-Q_charging = Q0 * (1 - np.exp(-t / tau))
-Q_discharging = Q0 * np.exp(-t / tau)
+Q_charging = V0 * (1 - np.exp(-t / tau))
+Q_discharging = V0 * np.exp(-t / tau)
 
 # Create plots
 plt.figure(figsize=(12, 6))
