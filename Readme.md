@@ -212,6 +212,8 @@ Charging Curve: The capacitor voltage initially increases rapidly, then graduall
 
 Discharging Curve: The capacitor voltage decreases exponentially over time, eventually reaching zero. The rate of decrease also depends on the RC time constant.
 
-
+In an RC circuit, the curve of charging and discharging a capacitor is characterized by an exponential behavior due to the interplay between the resistor and capacitor. When a voltage source is applied, the capacitor begins to charge through the resistor, following a curve that starts steeply but gradually levels off as it approaches its maximum charge, determined by the voltage of the source. 
+This charging process follows the equation  V(t) = V_{max}(1 - e^{-t/RC}, where V(t) is the voltage across the capacitor at time (t), V_{max} is the source voltage, (R) is the resistance, and (C) is the capacitance. 
+Conversely, during discharging, when the voltage source is removed, the stored energy in the capacitor dissipates through the resistor. The voltage across the capacitor decreases exponentially according to V(t) = V_{max}e^{-t/RC}, where the time constant tau = RC dictates the rate at which charging and discharging occur. The time constant represents the time it takes for the voltage to change significantly, and after a few time constants, the capacitor is effectively charged or discharged.
 
 
