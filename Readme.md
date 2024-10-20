@@ -77,4 +77,14 @@ Discharging Equation:
 Time Constant: 
 𝜏=𝑅𝐶 determines how quickly the capacitor charges and discharges.
 
-
+Charging a capacitor involves the process of storing electrical energy in an electric field between two conductive plates, 
+which are separated by an insulating material called a dielectric. Here’s a step-by-step explanation of how it works:
+Connection to Voltage Source:
+When a capacitor is connected to a voltage source, such as a battery, an electric field begins to develop between the
+plates.The positive plate attracts electrons from the negative terminal of the voltage source, causing it to accumulate
+ positive charge.
+ Charging Process:
+Initial Stage: At the moment the circuit is closed, the capacitor is uncharged, and the voltage across it is zero.
+Current Flow: The voltage source creates a potential difference, causing current to flow into the capacitor.
+Charge Accumulation: As current flows, charge accumulates on the plates. One plate gains positive charge,
+ while the other gains an equal amount of negative charge.
