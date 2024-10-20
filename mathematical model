@@ -1,0 +1,32 @@
+
+import numpy as np
+
+# Constants
+R = 100  # Resistance in ohms
+C = 0.001  # Capacitance in farads
+Vb = 5  # Supply voltage in volts (for charging)
+V0 = Vb  # Initial voltage for discharging (can be adjusted)
+t_final = 1.5  # Total time for the simulation (in seconds)
+dt = 0.1  # Time step
+time_points = np.arange(0, t_final, dt)  # Create time array
+
+# Prepare arrays for voltage across capacitor
+Vc_charge = np.zeros_like(time_points)  # Voltage array for charging
+Vc_discharge = np.zeros_like(time_points)  # Voltage array for discharging
+
+# Mathematical model for charging the capacitor
+for i, t in enumerate(time_points):
+    Vc_charge[i] = Vb * (1 - np.exp(-t / (R * C)))  # Charging equation
+
+# Mathematical model for discharging the capacitor
+for i, t in enumerate(time_points):
+    Vc_discharge[i] = V0 * np.exp(-t / (R * C))  # Discharging equation
+
+# Output the results
+print("Charging Phase:")
+for t, voltage in zip(time_points, Vc_charge):
+    print(f"Time: {t:.2f} s, Voltage across Capacitor (Charging): {voltage:.2f} V")
+
+print("\nDischarging Phase:")
+for t, voltage in zip(time_points, Vc_discharge):
+    print(f"Time: {t:.2f} s, Voltage across Capacitor (Discharging): {voltage:.2f} V")
