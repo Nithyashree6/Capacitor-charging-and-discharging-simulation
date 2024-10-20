@@ -102,4 +102,10 @@ where
 𝑉0 is the initial voltage across the capacitor at 𝑡=0.
 
 
+When a capacitor is connected to a load (like a resistor), it begins to discharge.
+The stored charge flows from one plate of the capacitor through the circuit to the other plate, creating a current.
+As the capacitor discharges, the voltage across its plates decreases, and so does the current flowing through the circuit.
 
+
+Discharging capacitors is crucial in many electronic devices. 
+It ensures that capacitors return to a safe voltage level and can help prevent damage or unwanted behavior in circuits.
