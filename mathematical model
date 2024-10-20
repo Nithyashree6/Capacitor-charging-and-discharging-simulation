@@ -1,21 +1,19 @@
-blocks
-let e = 2.71828
-let R = 20000
-let C = 2e-10
-let Vc = 0
-let Vin = 3.3
-let t = 0
-for (let i = 0; i < 75; i++) {
-    Vc = Vin * (1 - e ** (t / (R * C)))
-    t += -0.0000005
-    console.logValue("Vc", Vc)
-    pause(100)
-}
+g1 = graph(xtitle="t [s]",ytitle="V [volts]"
+width=400, height=200)
+fc = gcurve(color=color,blue)
+fa = gcurve(color=color,red)
+
+R = 100
+C = 0.001
 t = 0
-Vin = Vc
-for (let i = 0; i < 75; i++) {
-    Vc = Vin * (e ** (t / (R * C)))
-    t += -0.0000005
-    console.logValue("Vc", Vc)
-    pause(100)
-} 
+dt = 0.01
+vb = 0
+Q = 3*C
+
+ while t <1.5:
+    dQ = (vb - Q/C)*dt/R
+    Q = Q + dQ
+    Vc = Vb*(1 - exp(-t/(R*C)))
+    fc.plot(t,Vc)
+    #fa.plot(t,va)
+    
