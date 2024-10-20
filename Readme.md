@@ -43,11 +43,6 @@ Resistance (R): Enter the resistance value in ohms.
 Capacitance (C): Enter the capacitance value in farads.
 Input Voltage (Vo): Enter the input voltage value in volts.
 
-Interpretation:
-
-Charging Curve: The capacitor voltage initially increases rapidly, then gradually approaches the input voltage. The rate of increase depends on the RC time constant (R * C).
-Discharging Curve: The capacitor voltage decreases exponentially over time, eventually reaching zero. The rate of decrease also depends on the RC time constant.
-
 Mathematical Model :
 
 Charging a Capacitor :
@@ -100,6 +95,123 @@ For discharging, when the capacitor discharges through a resistor 𝑅 (with no 
 where
 
 𝑉0 is the initial voltage across the capacitor at 𝑡=0.
+
+Explaination Of the code :
+
+The code simulates the charging and discharging of a capacitor in an RC circuit and plots the results using Python's matplotlib library. Here's a detailed explanation of the code:
+
+1. Importing Libraries
+
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+import sympy as sp
+
+numpy is used for numerical computations, such as creating arrays and performing mathematical operations.
+
+matplotlib.pyplot is used to plot the data.
+
+sympy is a symbolic mathematics library used for algebraic operations.
+
+2. Constants
+
+R = 1.0  # Resistance (Ohms)
+
+C = 1.0  # Capacitance (Farads)
+
+V0 = 5.0  # Initial voltage (volts)
+
+tau = R * C  # Time constant
+
+3. Time Values
+
+t = np.linspace(0, 5 * tau, 500)
+
+This line creates a sequence of 500 time values between 0 and 5τ. 
+
+This time span is sufficient for visualizing how the capacitor reaches its steady state.
+
+4. Charging and Discharging Functions
+
+Capacitor_charging = V0 * (1 - np.exp(-t / tau))
+
+Capacitor_discharging = V0 * np.exp(-t / tau)
+
+Charging Voltage Equation:
+
+V0 * (1 - np.exp(-t / tau))
+
+This equation represents the voltage across the capacitor as it charges. Initially, the capacitor has 0V, and over time it approaches (5V here)
+ 
+Discharging Voltage Equation:
+
+ V0 * np.exp(-t / tau)
+
+This equation shows how the voltage drops across the capacitor during discharging, starting at V0 and decreasing exponentially to 0V.
+
+5. Plotting the Charging Curve
+
+plt.subplot(121)
+
+plt.plot(t, Capacitor_charging, label='Charging Voltage (V)')
+
+plt.xlabel('Time (s)')
+
+plt.ylabel('Voltage (V)')
+
+plt.title('Capacitor Charging in RC circuit')
+
+plt.grid()
+
+plt.legend()
+
+A subplot is created for the charging curve using plt.subplot(121) (first of two subplots).
+
+The time t is plotted against the calculated charging voltage Capacitor_charging.
+
+The plot includes labels, a title, a grid, and a legend.
+
+6. Plotting the Discharging Curve
+
+plt.subplot(122)
+
+plt.plot(t, Capacitor_discharging, label='Discharging Voltage (V)')
+
+plt.xlabel('Time (s)')
+
+plt.ylabel('Voltage (V)')
+
+plt.title('Capacitor Discharging in RC circuit')
+
+plt.grid()
+
+plt.legend()
+
+The second subplot (on the right) is for the discharging curve.
+
+The time t is plotted against the calculated discharging voltage Capacitor_discharging.
+
+7. Display the Plots
+
+plt.tight_layout()
+
+plt.show()
+
+plt.tight_layout() adjusts the layout so the subplots don't overlap.
+
+plt.show() displays the two graphs: one showing the voltage rise during charging, and the other showing the voltage drop during discharging.
+
+You can modify the values of R, C, V0 to observe different behaviors based on different RC circuits.
+
+
+Interpretation:
+
+Charging Curve: The capacitor voltage initially increases rapidly, then gradually approaches the input voltage. The rate of increase depends on the RC time constant (R * C).
+
+Discharging Curve: The capacitor voltage decreases exponentially over time, eventually reaching zero. The rate of decrease also depends on the RC time constant.
+
+
 
 
 
