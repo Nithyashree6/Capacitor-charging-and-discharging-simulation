@@ -87,6 +87,7 @@ This time constant represents the time it takes for the voltage to reach about 6
 
 Discharging a Capacitor :
 
+When a capacitor is connected to a load (like a resistor), it begins to discharge.The stored charge flows from one plate of the capacitor through the circuit to the other plate, creating a current.As the capacitor discharges, the voltage across its plates decreases, and so does the current flowing through the circuit.It ensures that capacitors return to a safe voltage level and can help prevent damage or unwanted behavior in circuits.
 
 For discharging, when the capacitor discharges through a resistor 𝑅 (with no external voltage source), the voltage across the capacitor decreases over time according to:
 
@@ -146,7 +147,7 @@ This equation represents the voltage across the capacitor as it charges. Initial
  
 Discharging Voltage Equation:
 
- V0 * np.exp(-t / tau)
+V0 * np.exp(-t / tau)
 
 This equation shows how the voltage drops across the capacitor during discharging, starting at V0 and decreasing exponentially to 0V.
 
@@ -214,10 +215,3 @@ Discharging Curve: The capacitor voltage decreases exponentially over time, even
 
 
 
-When a capacitor is connected to a load (like a resistor), it begins to discharge.
-The stored charge flows from one plate of the capacitor through the circuit to the other plate, creating a current.
-As the capacitor discharges, the voltage across its plates decreases, and so does the current flowing through the circuit.
-
-
-Discharging capacitors is crucial in many electronic devices. 
-It ensures that capacitors return to a safe voltage level and can help prevent damage or unwanted behavior in circuits.
