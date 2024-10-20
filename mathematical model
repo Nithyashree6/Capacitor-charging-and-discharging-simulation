@@ -1,8 +1,5 @@
 
 import numpy as np
-
-import matplotlib.pyplot as plt
-
 # Constants
 
 R = 1000 #Resistance (ohms)
@@ -20,22 +17,3 @@ V_charge = V0 * (1 - np.exp(-t/(R*C)))
 # Discharging model
 V_discharge = V0 * np.exp(-t/(R*C))
 
-# Plot results 
-plt.figure(figsize=(10, 5))
-
-plt.subplot(1, 2, 1) 
-plt.plot(t, V_charge)
-plt.title('Capacitor Charging') 
-plt.xlabel('Time (s)') 
-plt.ylabel('Voltage (V)')
-plt.grid(True)
-
-plt.subplot(1, 2, 2)
-plt.plot(t, V_discharge)
-plt.title('Capacitor Discharging') 
-plt.xlabel('Time (s)')
-plt.ylabel('Voltage (V)')
-plt.grid(True)
-
-plt.tight_layout()
-plt.show()
