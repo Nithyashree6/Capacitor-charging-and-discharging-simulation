@@ -216,7 +216,9 @@ In an RC circuit, the curve of charging and discharging a capacitor is character
 This charging process follows the equation  V(t) = V_{max}(1 - e^{-t/RC}, where V(t) is the voltage across the capacitor at time (t), V_{max} is the source voltage, (R) is the resistance, and (C) is the capacitance. 
 Conversely, during discharging, when the voltage source is removed, the stored energy in the capacitor dissipates through the resistor. The voltage across the capacitor decreases exponentially according to V(t) = V_{max}e^{-t/RC}, where the time constant tau = RC dictates the rate at which charging and discharging occur. The time constant represents the time it takes for the voltage to change significantly, and after a few time constants, the capacitor is effectively charged or discharged.
 
-Conclusion:In conclusion, the charging and discharging behavior of a capacitor in an RC circuit follows an exponential curve, dictated by the time constant \( \tau = RC \). This time constant determines how quickly the capacitor charges up to the applied voltage or discharges to zero.
+Conclusion:
+
+In conclusion, the charging and discharging behavior of a capacitor in an RC circuit follows an exponential curve, dictated by the time constant tau = RC . This time constant determines how quickly the capacitor charges up to the applied voltage or discharges to zero.
 The gradual change in voltage during these processes illustrates the capacitor's ability to store and release energy in a controlled manner.
 Understanding this behavior is essential in designing circuits for timing, filtering, and energy storage applications, as it allows engineers to predict how long it will take for the capacitor to reach certain voltage levels.
 
